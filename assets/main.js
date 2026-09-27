@@ -1,37 +1,58 @@
 (function () {
   "use strict";
 
-  // Menu mobile
-  var header = document.querySelector(".site-header");
-  var toggle = document.querySelector(".nav-toggle");
-  if (header && toggle) {
-    toggle.addEventListener("click", function () {
-      var open = header.classList.toggle("is-open");
-      toggle.setAttribute("aria-expanded", String(open));
+  // Mega menu de Áreas de Atuação
+  var mega = document.querySelector(".has-mega");
+  if (mega) {
+    var megaBtn = mega.querySelector(".nav__link");
+    var setMega = function (open) {
+      mega.classList.toggle("is-open", open);
+      megaBtn.setAttribute("aria-expanded", String(open));
+    };
+    megaBtn.addEventListener("click", function () { setMega(!mega.classList.contains("is-open")); });
+    document.addEventListener("click", function (ev) { if (!mega.contains(ev.target)) setMega(false); });
+    document.addEventListener("keydown", function (ev) {
+      if (ev.key === "Escape" && mega.classList.contains("is-open")) { setMega(false); megaBtn.focus(); }
     });
   }
 
-  // Submenu de Áreas (clique para toque/teclado; hover resolve no desktop)
-  document.querySelectorAll(".nav__item--has-sub").forEach(function (item) {
-    var btn = item.querySelector(".nav__link");
-    btn.addEventListener("click", function () {
-      var open = item.classList.toggle("is-open");
-      btn.setAttribute("aria-expanded", String(open));
-    });
-    item.addEventListener("keydown", function (ev) {
-      if (ev.key === "Escape") {
-        item.classList.remove("is-open");
-        btn.setAttribute("aria-expanded", "false");
-        btn.focus();
-      }
-    });
-  });
-  document.addEventListener("click", function (ev) {
-    document.querySelectorAll(".nav__item--has-sub.is-open").forEach(function (item) {
-      if (!item.contains(ev.target)) {
-        item.classList.remove("is-open");
-        item.querySelector(".nav__link").setAttribute("aria-expanded", "false");
-      }
+  // Painel lateral (menu completo; único menu em telas estreitas)
+  var panel = document.getElementById("painel");
+  var burger = document.querySelector(".burger");
+  if (panel && burger) {
+    var closeBtn = panel.querySelector(".panel__close");
+    var setPanel = function (open) {
+      panel.hidden = !open;
+      burger.setAttribute("aria-expanded", String(open));
+      document.body.classList.toggle("is-locked", open);
+      if (open) closeBtn.focus(); else burger.focus();
+    };
+    burger.addEventListener("click", function () { setPanel(true); });
+    closeBtn.addEventListener("click", function () { setPanel(false); });
+    panel.addEventListener("click", function (ev) { if (ev.target === panel) setPanel(false); });
+    document.addEventListener("keydown", function (ev) { if (ev.key === "Escape" && !panel.hidden) setPanel(false); });
+  }
+
+  // Abas (Nossa história)
+  document.querySelectorAll("[data-tabs]").forEach(function (root) {
+    var tabs = Array.prototype.slice.call(root.querySelectorAll("[role=tab]"));
+    var select = function (tab) {
+      tabs.forEach(function (t) {
+        var on = t === tab;
+        t.setAttribute("aria-selected", String(on));
+        t.tabIndex = on ? 0 : -1;
+        document.getElementById(t.getAttribute("aria-controls")).hidden = !on;
+      });
+    };
+    tabs.forEach(function (t, i) {
+      t.addEventListener("click", function () { select(t); });
+      t.addEventListener("keydown", function (ev) {
+        var d = ev.key === "ArrowRight" ? 1 : ev.key === "ArrowLeft" ? -1 : 0;
+        if (!d) return;
+        var next = tabs[(i + d + tabs.length) % tabs.length];
+        select(next);
+        next.focus();
+      });
     });
   });
 

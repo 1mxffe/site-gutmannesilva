@@ -8,50 +8,80 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230E1F30'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='30' font-weight='700' text-anchor='middle' fill='%238EB2D8'%3EG%26S%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Source+Sans+3:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=Figtree:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
 <a class="skip" href="#conteudo">Ir para o conteúdo</a>
 <header class="site-header">
   <div class="wrap site-header__inner">
-    <a class="brand" href="index.html" aria-label="Gutmann &amp; Silva Advogados Associados — página inicial">
-      <span class="brand__name">Gutmann <span>&amp;</span> Silva</span>
-      <span class="brand__tag">Advogados Associados</span>
-    </a>
-    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
-    <nav class="nav" id="menu" aria-label="Principal">
+    <a class="logo " href="index.html" aria-label="Gutmann &amp; Silva Advogados Associados — página inicial">
+  <span class="logo__line">Gutmann &amp; Silva</span>
+  <span class="logo__line logo__line--sub">Advogados Associados<i class="logo__sq" aria-hidden="true"></i></span>
+</a>
+    <nav class="nav" aria-label="Principal">
       <ul class="nav__list">
         <li><a class="nav__link" href="index.html">Home</a></li>
         <li><a class="nav__link" href="escritorio.html">O Escritório</a></li>
-        <li class="nav__item--has-sub">
-          <button class="nav__link" type="button" aria-expanded="false" aria-controls="submenu-areas">Áreas de Atuação <span class="chev" aria-hidden="true"></span></button>
-          <ul class="submenu" id="submenu-areas">
-            <li><a href="area-empresarial.html">Empresarial</a></li>
+        <li class="has-mega">
+          <button class="nav__link" type="button" aria-expanded="false" aria-controls="mega-areas">Áreas de Atuação <span class="chev" aria-hidden="true"></span></button>
+          <div class="mega" id="mega-areas">
+            <div class="wrap mega__inner">
+              <div class="mega__intro">
+                <p class="mega__title">Áreas de Atuação</p>
+                <a class="btn btn--outline-light" href="areas.html"><span>Ver todas as áreas em detalhe</span><svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
+              </div>
+              <ul class="mega__list"><li><a href="area-empresarial.html"><span>Empresarial</span><svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a></li>
+<li><a href="area-tributario.html"><span>Tributário</span><svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a></li>
+<li><a href="area-trabalhista.html"><span>Trabalhista</span><svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a></li>
+<li><a href="area-civel.html"><span>Cível</span><svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a></li>
+<li><a href="area-familia-sucessoes.html"><span>Família &amp; Sucessões</span><svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a></li>
+<li><a href="area-previdenciario.html"><span>Previdenciário</span><svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a></li></ul>
+            </div>
+          </div>
+        </li>
+        <li><a class="nav__link" href="blog.html">Blog</a></li>
+        <li><a class="nav__link" href="equipe.html">Equipe</a></li>
+      </ul>
+      <a class="btn btn--primary" href="contato.html" aria-current="page"><span>Contato</span><svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
+    </nav>
+    <button class="burger" type="button" aria-expanded="false" aria-controls="painel" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<div class="panel" id="painel" hidden>
+  <div class="panel__inner">
+    <button class="panel__close" type="button" aria-label="Fechar menu"><span></span><span></span></button>
+    <ul class="panel__main">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="escritorio.html">O Escritório</a></li>
+      <li><a href="areas.html">Áreas de Atuação</a><ul class="panel__sub"><li><a href="area-empresarial.html">Empresarial</a></li>
 <li><a href="area-tributario.html">Tributário</a></li>
 <li><a href="area-trabalhista.html">Trabalhista</a></li>
 <li><a href="area-civel.html">Cível</a></li>
 <li><a href="area-familia-sucessoes.html">Família &amp; Sucessões</a></li>
-<li><a href="area-previdenciario.html">Previdenciário</a></li>
-            <li class="submenu__all"><a href="areas.html">Todas as áreas</a></li>
-          </ul>
-        </li>
-        <li><a class="nav__link" href="blog.html">Blog</a></li>
-        <li><a class="nav__link" href="equipe.html">Equipe</a></li>
-        <li><a class="btn btn--primary nav__cta" href="contato.html" aria-current="page">Contato</a></li>
-      </ul>
-    </nav>
+<li><a href="area-previdenciario.html">Previdenciário</a></li></ul></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="equipe.html">Equipe</a></li>
+      <li><a href="contato.html">Contato</a></li>
+    </ul>
+    <div class="panel__contact">
+      <p>(41) 3081-3679</p>
+      <p>contato@gutmannesilva.com.br</p>
+    </div>
   </div>
-</header>
+</div>
 <main id="conteudo">
 <section class="page-hero">
-  <div class="wrap">
-    <ol class="crumbs" aria-label="Você está em"><li><a href="index.html">Home</a></li><li aria-current="page">Contato</li></ol>
-    <h1>Fale com o Gutmann &amp; Silva</h1>
-    <p class="lead">Estamos à disposição para entender sua situação e indicar o melhor caminho jurídico. Preencha o formulário abaixo ou utilize um dos canais de contato direto.</p>
+  <div class="page-hero__grid">
+    <div class="page-hero__text">
+      <ol class="crumbs" aria-label="Você está em"><li><a href="index.html">Home</a></li><li aria-current="page">Contato</li></ol>
+      <h1>Fale com o <em>Gutmann &amp; Silva</em></h1>
+      <p class="lead">Estamos à disposição para entender sua situação e indicar o melhor caminho jurídico. Preencha o formulário abaixo ou utilize um dos canais de contato direto.</p>
+    </div>
+    <div class="lines" aria-hidden="true"></div>
   </div>
 </section>
-<section class="section section--light" id="formulario">
+<section class="section section--white" id="formulario">
   <div class="wrap contact">
     <form class="form" data-form data-endpoint="" data-success="Mensagem enviada." novalidate>
       <div class="form__row">
@@ -62,7 +92,7 @@
       <div class="field"><label for="mensagem">Mensagem</label><textarea id="mensagem" name="mensagem" required></textarea></div>
       <p class="form__note">Ao enviar este formulário, você concorda em ser contatado pela nossa equipe. Suas informações não serão compartilhadas com terceiros.</p>
       <p class="form__status" role="status" hidden></p>
-      <button class="btn btn--primary" type="submit">Enviar mensagem</button>
+      <button class="btn btn--primary" type="submit"><span>Enviar mensagem</span><svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button>
     </form>
     <dl class="channels">
       <div class="channel"><dt>Telefone</dt><dd><a href="tel:+554130813679">(41) 3081-3679</a></dd></div>
@@ -72,16 +102,16 @@
     </dl>
   </div>
 </section>
-<section class="section section--deep">
+<section class="section section--sky">
   <div class="wrap newsletter">
-    <div class="stack">
-      <h2>Fique por dentro</h2>
-      <p class="lead">Cadastre-se para receber atualizações jurídicas relevantes para sua empresa ou sua família, direto na sua caixa de entrada.</p>
+    <div>
+      <h2>Fique por <em>dentro</em></h2>
+      <p class="lead-dark">Cadastre-se para receber atualizações jurídicas relevantes para sua empresa ou sua família, direto na sua caixa de entrada.</p>
     </div>
     <form class="newsletter__form" data-form data-endpoint="" data-success="Inscrição realizada." novalidate>
       <div class="newsletter__row">
         <div class="field"><label for="news-email">E-mail</label><input id="news-email" name="email" type="email" autocomplete="email" required></div>
-        <button class="btn btn--primary" type="submit">Inscrever-se</button>
+        <button class="btn btn--primary" type="submit"><span>Inscrever-se</span><svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button>
       </div>
       <p class="form__status" role="status" hidden></p>
     </form>
@@ -90,14 +120,11 @@
 </main>
 <footer class="site-footer">
   <div class="wrap">
+    <div class="footer__brand"><a class="logo logo--xl" href="index.html" aria-label="Gutmann &amp; Silva Advogados Associados — página inicial">
+  <span class="logo__line">Gutmann &amp; Silva</span>
+  <span class="logo__line logo__line--sub">Advogados Associados<i class="logo__sq" aria-hidden="true"></i></span>
+</a></div>
     <div class="footer__grid">
-      <div class="footer__col">
-        <a class="brand" href="index.html">
-          <span class="brand__name">Gutmann <span>&amp;</span> Silva</span>
-          <span class="brand__tag">Advogados Associados</span>
-        </a>
-        <address>Rua João Ângelo Cordeiro, 272 — São Pedro, São José dos Pinhais/PR — CEP 83005-570</address>
-      </div>
       <div class="footer__col">
         <h2>Escritório</h2>
         <ul>
@@ -119,10 +146,14 @@
       <div class="footer__col">
         <h2>Contato</h2>
         <ul>
-          <li>Telefone: <a href="tel:+554130813679">(41) 3081-3679</a></li>
-          <li>WhatsApp: <a href="https://wa.me/554188141335" target="_blank" rel="noopener">+55 41 8814-1335</a></li>
-          <li>E-mail: <a href="mailto:contato@gutmannesilva.com.br">contato@gutmannesilva.com.br</a></li>
+          <li><a href="tel:+554130813679">(41) 3081-3679</a></li>
+          <li>WhatsApp <a href="https://wa.me/554188141335" target="_blank" rel="noopener">+55 41 8814-1335</a></li>
+          <li><a href="mailto:contato@gutmannesilva.com.br">contato@gutmannesilva.com.br</a></li>
         </ul>
+      </div>
+      <div class="footer__col">
+        <h2>Endereço</h2>
+        <address>Rua João Ângelo Cordeiro, 272 — São Pedro, São José dos Pinhais/PR — CEP 83005-570</address>
       </div>
     </div>
     <div class="footer__bottom">

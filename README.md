@@ -38,7 +38,8 @@ python3 build.py
 - Navy `#0E1F30` (fundo predominante), azul `#2C6196` (CTAs e destaques),
   branco e cinzas levemente azulados; `#8EB2D8` (tom claro do azul) nos
   números sobre fundo escuro, para manter contraste legível.
-- Títulos em Cormorant Garamond (serifada), texto em Source Sans 3 — ambas via Google Fonts.
+- Títulos em Newsreader (serifada, com destaque em itálico), texto em Figtree — ambas via Google Fonts.
+- Linguagem visual inspirada em hlc.com: botões retos com seta ↗, rótulos com fio vertical, painéis em degradê com fios horizontais, cards com seta no canto, mega menu de áreas, menu lateral e abas na linha do tempo.
 
 ## Publicação (Vercel)
 
