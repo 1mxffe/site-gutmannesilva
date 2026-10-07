@@ -292,8 +292,13 @@ ul { margin: 0; padding: 0; list-style: none; }
 .cta { overflow: hidden; }
 .cta .glow { width: 600px; height: 600px; left: 200px; top: -200px; background: rgba(0, 132, 255, .16); }
 .cta-box {
-  position: relative; background: var(--ink-2); border: 1px solid var(--blue); border-radius: 32px; padding: clamp(32px, 5vw, 64px);
+  position: relative; background: var(--ink-2); border: 1px solid var(--line); border-radius: 32px; padding: clamp(32px, 5vw, 64px);
   display: flex; align-items: center; gap: 48px; overflow: hidden;
+  transition: border-color .3s ease, box-shadow .3s ease;
+}
+.cta-box:hover, .cta-box:focus-within {
+  border-color: var(--blue);
+  box-shadow: 0 8px 8.5px rgba(0, 132, 255, .08), 0 30px 15px rgba(0, 132, 255, .07), 0 69px 20.5px rgba(0, 132, 255, .04);
 }
 .cta-copy { display: flex; flex-direction: column; gap: 24px; flex: 1; min-width: 0; }
 .cta-copy h2 { font: 400 clamp(36px, 4vw, 56px)/1.1 var(--serif); }
