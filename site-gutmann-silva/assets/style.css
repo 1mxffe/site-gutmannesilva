@@ -433,3 +433,48 @@ ul { margin: 0; padding: 0; list-style: none; }
 .card-dark p.channel-value { color: var(--white); font-size: 16px; }
 @media (min-width: 861px) { .stat-num { white-space: nowrap; font-size: clamp(40px, 4.2vw, 64px); } }
 .tl-item p.tl-year { font-size: clamp(28px, 2.6vw, 36px); color: var(--white); }
+
+/* ---------- Animações ---------- */
+@keyframes fade-up { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+@keyframes float-a { 0%, 100% { transform: translate(0, 0) scale(1); } 50% { transform: translate(-40px, 30px) scale(1.08); } }
+@keyframes float-b { 0%, 100% { transform: translate(0, 0) scale(1); } 50% { transform: translate(50px, -30px) scale(1.1); } }
+@keyframes nudge { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(5px); } }
+
+/* Entrada do hero ao carregar */
+.hero .wrap > *, .page-hero-copy > * { animation: fade-up .8s cubic-bezier(.2, .7, .2, 1) both; }
+.hero .wrap > :nth-child(2), .page-hero-copy > :nth-child(2) { animation-delay: .12s; }
+.hero .wrap > :nth-child(3), .page-hero-copy > :nth-child(3) { animation-delay: .24s; }
+.hero .wrap > :nth-child(4), .page-hero-copy > :nth-child(4) { animation-delay: .36s; }
+.hero .wrap > :nth-child(5), .page-hero-copy > :nth-child(5) { animation-delay: .48s; }
+
+/* Brilhos de fundo flutuando */
+.glow-a { animation: float-a 14s ease-in-out infinite; }
+.glow-b { animation: float-b 18s ease-in-out infinite; }
+
+/* Revelar ao rolar (só ativo com JS) */
+.js .reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s cubic-bezier(.2, .7, .2, 1); transition-delay: var(--d, 0ms); }
+.js .reveal.in { opacity: 1; transform: none; }
+
+/* Cabeçalho ganha sombra ao rolar */
+.site-header { transition: box-shadow .25s ease, background .25s ease; }
+.site-header.scrolled { box-shadow: 0 8px 28px rgba(0, 0, 0, .35); background: rgba(21, 21, 29, .97); }
+
+/* Hover/foco */
+.card-dark, .card-light, .service { transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease; }
+.card-dark:hover, .card-light:hover { transform: translateY(-6px); }
+.card-dark:not(.is-active):hover { border-color: var(--blue); box-shadow: 0 16px 40px rgba(0, 132, 255, .12); }
+.card-light:hover { box-shadow: 0 16px 40px rgba(0, 0, 0, .1); }
+.service:hover { transform: translateX(4px); border-color: var(--blue); }
+.area-card { transition: transform .3s ease, background .2s ease, border-color .2s ease, box-shadow .2s ease; }
+.area-card:hover { transform: translateY(-6px); }
+.area-card:hover .link-arrow .icon, .link-arrow:hover .icon { transform: translateX(5px); }
+.btn .icon { transition: transform .25s ease; }
+.btn:hover .icon { transform: translate(3px, -3px); }
+.other-areas a { transition: transform .2s ease, border-color .2s ease, color .2s ease; }
+.other-areas a:hover { transform: translateY(-2px); border-color: var(--blue); color: var(--blue); }
+.scroll-cue .circle { animation: nudge 2s ease-in-out infinite; }
+
+/* Acordeão */
+.acc-item[open] .acc-body { animation: fade-up .35s ease both; }
+.acc-toggle { transition: background .2s ease, transform .3s ease; }
+.acc-item[open] .acc-toggle { transform: rotate(180deg); }
