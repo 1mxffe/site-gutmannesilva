@@ -483,3 +483,8 @@ ul { margin: 0; padding: 0; list-style: none; }
 .acc-item[open] .acc-body { animation: fade-up .35s ease both; }
 .acc-toggle { transition: background .2s ease, transform .3s ease; }
 .acc-item[open] .acc-toggle { transform: rotate(180deg); }
+
+/* Logo */
+.logo-img { display: block; height: 72px; width: auto; }
+.site-footer .logo-img { height: 96px; }
+@media (max-width: 760px) { .logo-img { height: 60px; } .site-footer .logo-img { height: 80px; } }
