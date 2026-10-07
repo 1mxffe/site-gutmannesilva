@@ -205,14 +205,15 @@ ul { margin: 0; padding: 0; list-style: none; }
   background: var(--ink-2); border: 1px solid var(--line); border-radius: 24px; padding: 40px;
   display: flex; flex-direction: column; gap: 40px; min-width: 0;
 }
-.card-dark.is-active {
-  border: 1.5px solid var(--blue);
+.card-dark:hover, .card-dark:focus-within {
+  border-color: var(--blue);
   box-shadow: 0 8px 8.5px rgba(0, 132, 255, .08), 0 30px 15px rgba(0, 132, 255, .07), 0 69px 20.5px rgba(0, 132, 255, .04);
 }
 .card-dark .card-copy { display: flex; flex-direction: column; gap: 16px; }
 .card-dark p { color: var(--muted); font-size: 15px; }
 .icon-box { width: 56px; height: 56px; border-radius: 16px; display: grid; place-items: center; background: var(--chip); border: 1px solid var(--line); color: var(--white); flex: none; }
-.is-active .icon-box { background: var(--blue); border-color: var(--blue); color: var(--ink); }
+.icon-box { transition: background .3s ease, border-color .3s ease, color .3s ease; }
+.card-dark:hover .icon-box, .card-dark:focus-within .icon-box { background: var(--blue); border-color: var(--blue); color: var(--ink); }
 .card-tall { min-height: 360px; justify-content: space-between; }
 .card-split { flex-direction: row; align-items: center; justify-content: space-between; gap: 40px; }
 .card-split .card-split-copy { display: flex; flex-direction: column; justify-content: space-between; gap: 32px; min-height: 280px; max-width: 448px; min-width: 0; }
@@ -462,7 +463,6 @@ ul { margin: 0; padding: 0; list-style: none; }
 /* Hover/foco */
 .card-dark, .card-light, .service { transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease; }
 .card-dark:hover, .card-light:hover { transform: translateY(-6px); }
-.card-dark:not(.is-active):hover { border-color: var(--blue); box-shadow: 0 16px 40px rgba(0, 132, 255, .12); }
 .card-light:hover { box-shadow: 0 16px 40px rgba(0, 0, 0, .1); }
 .service:hover { transform: translateX(4px); border-color: var(--blue); }
 .area-card { transition: transform .3s ease, background .2s ease, border-color .2s ease, box-shadow .2s ease; }
