@@ -100,7 +100,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   padding: 16px 28px; border-radius: 100px;
   font: 600 15px/1.2 var(--sans);
   border: 1px solid var(--blue);
-  background: var(--blue); color: var(--ink);
+  background: var(--blue); color: var(--white);
   cursor: pointer;
   transition: transform .2s ease, box-shadow .2s ease;
 }
