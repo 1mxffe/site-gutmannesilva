@@ -490,3 +490,35 @@ ul { margin: 0; padding: 0; list-style: none; }
 .logo-img { display: block; height: 72px; width: auto; }
 .site-footer .logo-img { height: 96px; }
 @media (max-width: 760px) { .logo-img { height: 60px; } .site-footer .logo-img { height: 80px; } }
+
+/* ---------- Celular: tipografia menor ---------- */
+@media (max-width: 640px) {
+  .section { padding-block: 48px; }
+  .h-display { font-size: clamp(34px, 10.5vw, 42px); }
+  .h-page { font-size: clamp(32px, 9.5vw, 40px); }
+  .h-section { font-size: clamp(28px, 8vw, 34px); }
+  .h-lead { font-size: clamp(24px, 7vw, 30px); }
+  .h-card { font-size: 22px; }
+  .text-lg { font-size: 16px; }
+  .hero-sub { font-size: 18px; }
+  .hero-type { gap: 20px; }
+  .section-head { margin-bottom: 32px; }
+  .stat-num { font-size: 34px; }
+  .card-light h3, .mvv .card-light h3, .partner-info h3, .empty h3 { font-size: 22px; }
+  .area-card h3 { font-size: 24px; }
+  .highlight .card-copy h3 { font-size: 24px; }
+  .cta-copy h2 { font-size: 28px; }
+  .cta-copy p { font-size: 15px; }
+  .tl-year, .tl-item p.tl-year { font-size: 26px; }
+  .acc-item summary { font-size: 16px; padding: 20px; }
+  .acc-item .acc-body { font-size: 14px; padding: 0 20px 20px; }
+  .article h2 { font-size: 26px; }
+  .article p { font-size: 16px; line-height: 1.7; }
+  .article-cta p { font-size: 19px; }
+  .main-nav a, .main-nav .nav-trigger { font-size: 16px; }
+  .dropdown a { font-size: 15px; }
+  .btn { font-size: 14px; padding: 14px 24px; }
+  .service { font-size: 15px; padding: 18px 20px; }
+  .card-dark p, .card-light p, .mvv .card-light p { font-size: 14px; }
+  .channel-value, .card-dark p.channel-value { font-size: 15px; }
+}
