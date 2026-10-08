@@ -213,7 +213,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 .card-dark p { color: var(--muted); font-size: 15px; }
 .icon-box { width: 56px; height: 56px; border-radius: 16px; display: grid; place-items: center; background: var(--chip); border: 1px solid var(--line); color: var(--white); flex: none; }
 .icon-box { transition: background .3s ease, border-color .3s ease, color .3s ease; }
-.card-dark:hover .icon-box, .card-dark:focus-within .icon-box { background: var(--blue); border-color: var(--blue); color: var(--ink); }
+.card-dark:hover .icon-box, .card-dark:focus-within .icon-box { background: var(--blue); border-color: var(--blue); color: var(--white); }
 .card-tall { min-height: 360px; justify-content: space-between; }
 .card-split { flex-direction: row; align-items: center; justify-content: space-between; gap: 40px; }
 .card-split .card-split-copy { display: flex; flex-direction: column; justify-content: space-between; gap: 32px; min-height: 280px; max-width: 448px; min-width: 0; }
