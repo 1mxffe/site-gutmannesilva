@@ -1,15 +1,15 @@
 /* Gutmann & Silva — site institucional
    Layout: faixas alternadas escuro (tinta) / claro (papel), conteúdo em coluna de 1280px,
-   títulos em Inria Serif, texto em Poppins, azul #3d7aab (derivado do azul-marinho da logo) como único acento. */
+   títulos em Inria Serif, texto em Poppins, azul #2f8fd8 (derivado do azul-marinho da logo) como único acento. */
 :root {
   --ink: #0d1824;
   --ink-2: #0a121b;
   --line: #1f3042;
   --line-soft: rgba(31, 48, 66, .6);
   --muted: #a1a1aa;
-  --blue: #3d7aab;
-  --blue-soft: rgba(61, 122, 171, .06);
-  --blue-glow: rgba(61, 122, 171, .66);
+  --blue: #2f8fd8;
+  --blue-soft: rgba(47, 143, 216, .06);
+  --blue-glow: rgba(47, 143, 216, .66);
   --paper: #f8f8fa;
   --paper-line: #e4e4e7;
   --paper-muted: #52525b;
@@ -104,7 +104,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   cursor: pointer;
   transition: transform .2s ease, box-shadow .2s ease;
 }
-.btn:hover { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(61, 122, 171, .35); }
+.btn:hover { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(47, 143, 216, .35); }
 .btn-ghost { background: transparent; color: var(--white); border-color: var(--line); }
 .light .btn-ghost { color: var(--ink); border-color: var(--paper-line); }
 .link-underline { font: 500 15px/1.2 var(--sans); text-decoration: underline; text-underline-offset: 4px; }
@@ -173,9 +173,9 @@ ul { margin: 0; padding: 0; list-style: none; }
 
 /* ---------- Hero ---------- */
 .hero { overflow: hidden; }
-.glow { position: absolute; border-radius: 50%; pointer-events: none; filter: blur(80px); background: rgba(61, 122, 171, .22); }
+.glow { position: absolute; border-radius: 50%; pointer-events: none; filter: blur(80px); background: rgba(47, 143, 216, .22); }
 .glow-a { width: 400px; height: 400px; top: 100px; left: min(1000px, 70%); }
-.glow-b { width: 500px; height: 500px; top: 400px; left: -100px; background: rgba(61, 122, 171, .14); }
+.glow-b { width: 500px; height: 500px; top: 400px; left: -100px; background: rgba(47, 143, 216, .14); }
 .hero .wrap { position: relative; display: flex; flex-direction: column; gap: 36px; }
 .hero-type { display: flex; flex-direction: column; gap: 30px; }
 .hero-sub { font: italic 200 clamp(22px, 2vw, 29px)/1.1 var(--sans); color: var(--blue); }
@@ -207,7 +207,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 .card-dark:hover, .card-dark:focus-within {
   border-color: var(--blue);
-  box-shadow: 0 8px 8.5px rgba(61, 122, 171, .08), 0 30px 15px rgba(61, 122, 171, .07), 0 69px 20.5px rgba(61, 122, 171, .04);
+  box-shadow: 0 8px 8.5px rgba(47, 143, 216, .08), 0 30px 15px rgba(47, 143, 216, .07), 0 69px 20.5px rgba(47, 143, 216, .04);
 }
 .card-dark .card-copy { display: flex; flex-direction: column; gap: 16px; }
 .card-dark p { color: var(--muted); font-size: 15px; }
@@ -245,7 +245,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 .awards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
 .card-light {
   background: var(--white); border: 1px solid var(--paper-line); border-radius: 20px; padding: 24px;
-  box-shadow: 0 12px 16px rgba(61, 122, 171, .1);
+  box-shadow: 0 12px 16px rgba(47, 143, 216, .1);
   display: flex; flex-direction: column; gap: 24px; min-width: 0;
 }
 .card-light .img-slot { height: 260px; border-radius: 12px; }
@@ -264,7 +264,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 .area-card h3 { font: 400 32px/1.15 var(--serif); }
 .area-card p { font-size: 14px; color: var(--paper-muted); }
-.area-card:hover, .area-card:focus-visible { background: var(--blue-soft); border-color: var(--blue); box-shadow: 0 12px 32px rgba(61, 122, 171, .1); }
+.area-card:hover, .area-card:focus-visible { background: var(--blue-soft); border-color: var(--blue); box-shadow: 0 12px 32px rgba(47, 143, 216, .1); }
 .area-card:hover h3, .area-card:focus-visible h3 { font-weight: 700; }
 .areas-more { margin-top: 48px; display: flex; justify-content: center; }
 @media (max-width: 1080px) { .areas-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; } }
@@ -290,7 +290,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 
 /* ---------- CTA ---------- */
 .cta { overflow: hidden; }
-.cta .glow { width: 600px; height: 600px; left: 200px; top: -200px; background: rgba(61, 122, 171, .16); }
+.cta .glow { width: 600px; height: 600px; left: 200px; top: -200px; background: rgba(47, 143, 216, .16); }
 .cta-box {
   position: relative; background: var(--ink-2); border: 1px solid var(--line); border-radius: 32px; padding: clamp(32px, 5vw, 64px);
   display: flex; align-items: center; gap: 48px; overflow: hidden;
@@ -298,7 +298,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 .cta-box:hover, .cta-box:focus-within {
   border-color: var(--blue);
-  box-shadow: 0 8px 8.5px rgba(61, 122, 171, .08), 0 30px 15px rgba(61, 122, 171, .07), 0 69px 20.5px rgba(61, 122, 171, .04);
+  box-shadow: 0 8px 8.5px rgba(47, 143, 216, .08), 0 30px 15px rgba(47, 143, 216, .07), 0 69px 20.5px rgba(47, 143, 216, .04);
 }
 .cta-copy { display: flex; flex-direction: column; gap: 24px; flex: 1; min-width: 0; }
 .cta-copy h2 { font: 400 clamp(36px, 4vw, 56px)/1.1 var(--serif); }
@@ -348,7 +348,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 
 .services { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
 .service { background: var(--white); border: 1px solid var(--paper-line); border-radius: 16px; padding: 22px 24px; display: flex; gap: 16px; align-items: flex-start; font: 500 16px/1.45 var(--sans); color: var(--ink); min-width: 0; }
-.service .tick { width: 28px; height: 28px; border-radius: 14px; background: var(--blue-soft); border: 1px solid rgba(61, 122, 171, .25); color: var(--blue); display: grid; place-items: center; flex: none; }
+.service .tick { width: 28px; height: 28px; border-radius: 14px; background: var(--blue-soft); border: 1px solid rgba(47, 143, 216, .25); color: var(--blue); display: grid; place-items: center; flex: none; }
 .service .tick .icon { width: 14px; height: 14px; stroke-width: 2.25; }
 @media (max-width: 760px) { .services { grid-template-columns: minmax(0, 1fr); } }
 
