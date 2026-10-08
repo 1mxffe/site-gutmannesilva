@@ -157,8 +157,10 @@ ul { margin: 0; padding: 0; list-style: none; }
   .header-inner { min-height: 76px; }
   .logo-name { font-size: 24px; }
   .main-nav {
-    position: fixed; inset: 76px 0 0 0; top: calc(76px + env(safe-area-inset-top, 0px));
-    background: var(--ink); padding: 24px var(--gutter) 48px; overflow-y: auto;
+    /* absolute (e não fixed): o backdrop-filter do header cria um bloco de contenção para filhos fixed */
+    position: absolute; top: 100%; left: 0; right: 0;
+    height: calc(100vh - 77px - env(safe-area-inset-top, 0px)); height: calc(100dvh - 77px - env(safe-area-inset-top, 0px));
+    background: var(--ink); padding: 24px var(--gutter) 48px; overflow-y: auto; overscroll-behavior: contain;
     display: none;
   }
   .main-nav.open { display: block; }
