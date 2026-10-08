@@ -522,3 +522,10 @@ ul { margin: 0; padding: 0; list-style: none; }
   .card-dark p, .card-light p, .mvv .card-light p { font-size: 14px; }
   .channel-value, .card-dark p.channel-value { font-size: 15px; }
 }
+
+/* Textos resumidos no celular: versão completa no desktop, curta até 640px */
+.d-short { display: none; }
+@media (max-width: 640px) {
+  .d-full, .m-hide { display: none; }
+  .d-short { display: inline; }
+}
