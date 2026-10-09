@@ -5,247 +5,143 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Gutmann &amp; Silva Advogados | 30 Anos em São José dos Pinhais/PR</title>
 <meta name="description" content="Escritório de advocacia full-service há 30 anos, com atuação em Empresarial, Tributário, Trabalhista, Cível, Família &amp; Sucessões e Previdenciário no Paraná, São Paulo e Santa Catarina.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230E1F30'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='30' font-weight='700' text-anchor='middle' fill='%238EB2D8'%3EG%26S%3C/text%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=Figtree:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="assets/styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,200&display=swap">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-<a class="skip" href="#conteudo">Ir para o conteúdo</a>
+<a class="sr-only" href="#conteudo">Pular para o conteúdo</a>
 <header class="site-header">
-  <div class="wrap site-header__inner">
-    <a class="logo " href="index.html" aria-label="Gutmann &amp; Silva Advogados Associados — página inicial">
-  <span class="logo__line">Gutmann &amp; Silva</span>
-  <span class="logo__line logo__line--sub">Advogados Associados<i class="logo__sq" aria-hidden="true"></i></span>
-</a>
-    <nav class="nav" aria-label="Principal">
-      <ul class="nav__list">
-        <li><a class="nav__link" href="index.html" aria-current="page">Home</a></li>
-        <li><a class="nav__link" href="escritorio.html">O Escritório</a></li>
-        <li class="has-mega">
-          <button class="nav__link" type="button" aria-expanded="false" aria-controls="mega-areas">Áreas de Atuação <span class="chev" aria-hidden="true"></span></button>
-          <div class="mega" id="mega-areas">
-            <div class="wrap mega__inner">
-              <div class="mega__intro">
-                <p class="mega__title">Áreas de Atuação</p>
-                <a class="btn btn--outline-light" href="areas.html"><span>Ver todas as áreas em detalhe</span><svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
-              </div>
-              <ul class="mega__list"><li><a href="area-empresarial.html"><span>Empresarial</span><svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a></li>
-<li><a href="area-tributario.html"><span>Tributário</span><svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a></li>
-<li><a href="area-trabalhista.html"><span>Trabalhista</span><svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a></li>
-<li><a href="area-civel.html"><span>Cível</span><svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a></li>
-<li><a href="area-familia-sucessoes.html"><span>Família &amp; Sucessões</span><svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a></li>
-<li><a href="area-previdenciario.html"><span>Previdenciário</span><svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a></li></ul>
-            </div>
-          </div>
+  <div class="header-inner">
+    <!-- Logo: substitua este bloco pela imagem oficial do logo -->
+    <a class="logo" href="index.html" aria-label="Gutmann &amp; Silva Advogados — início">
+      <img class="logo-img" src="assets/logo.webp" width="1908" height="1045" alt="Gutmann &amp; Silva Advogados Associados">
+    </a>
+    <nav class="main-nav" id="menu" aria-label="Principal">
+      <ul>
+        <li><a href="index.html" aria-current="page">Início</a></li>
+        <li><a href="o-escritorio.html">O Escritório</a></li>
+        <li class="has-dropdown">
+          <button class="nav-trigger" type="button" aria-expanded="false" aria-controls="dd-areas">Áreas de Atuação <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+          <ul class="dropdown" id="dd-areas">
+            <li><a href="area-empresarial.html">Direito Empresarial</a></li><li><a href="area-tributario.html">Direito Tributário</a></li><li><a href="area-trabalhista.html">Direito Trabalhista</a></li><li><a href="area-civel.html">Direito Cível</a></li><li><a href="area-familia-e-sucessoes.html">Família & Sucessões</a></li><li><a href="area-previdenciario.html">Direito Previdenciário</a></li>
+            <li><a class="dropdown-all" href="areas-de-atuacao.html">Ver todas as áreas</a></li>
+          </ul>
         </li>
-        <li><a class="nav__link" href="blog.html">Blog</a></li>
-        <li><a class="nav__link" href="equipe.html">Equipe</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="equipe.html">Equipe</a></li>
+        <li><a href="contato.html">Contato</a></li>
       </ul>
-      <a class="btn btn--primary" href="contato.html"><span>Contato</span><svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
     </nav>
-    <button class="burger" type="button" aria-expanded="false" aria-controls="painel" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu"><svg class="icon i-menu" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg><svg class="icon i-close" style="display:none" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
   </div>
 </header>
-<div class="panel" id="painel" hidden>
-  <div class="panel__inner">
-    <button class="panel__close" type="button" aria-label="Fechar menu"><span></span><span></span></button>
-    <ul class="panel__main">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="escritorio.html">O Escritório</a></li>
-      <li><a href="areas.html">Áreas de Atuação</a><ul class="panel__sub"><li><a href="area-empresarial.html">Empresarial</a></li>
-<li><a href="area-tributario.html">Tributário</a></li>
-<li><a href="area-trabalhista.html">Trabalhista</a></li>
-<li><a href="area-civel.html">Cível</a></li>
-<li><a href="area-familia-sucessoes.html">Família &amp; Sucessões</a></li>
-<li><a href="area-previdenciario.html">Previdenciário</a></li></ul></li>
-      <li><a href="blog.html">Blog</a></li>
-      <li><a href="equipe.html">Equipe</a></li>
-      <li><a href="contato.html">Contato</a></li>
-    </ul>
-    <div class="panel__contact">
-      <p>(41) 3081-3679</p>
-      <p>contato@gutmannesilva.com.br</p>
-    </div>
-  </div>
-</div>
 <main id="conteudo">
-<section class="hero">
-  <div class="hero__grid">
-    <div class="hero__text">
-      <h1>Três décadas de trajetória. Uma equipe que cresceu junto com <em>quem confiou nela.</em></h1>
-      <div class="hero__side">
-        <p>Desde 1994, o Gutmann &amp; Silva assessora empresas e famílias com uma equipe que hoje reúne mais de 30 profissionais, atuando em Direito Empresarial, Tributário, Trabalhista, Cível, Família &amp; Sucessões e Previdenciário — com sede no Paraná e atuação registrada também em São Paulo e Santa Catarina.</p>
-        <div class="actions">
-          <a class="btn btn--primary" href="contato.html"><span>Fale com o escritório</span><svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
-          <a class="btn btn--outline-light" href="escritorio.html"><span>Conheça nossa história</span><svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
-        </div>
+<section class="section dark hero">
+  <div class="glow glow-a" aria-hidden="true"></div><div class="glow glow-b" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="hero-type">
+      <h1 class="h-display">Três décadas de trajetória.</h1>
+      <p class="hero-sub">Uma equipe que cresceu junto com quem confiou nela.</p>
+    </div>
+    <p class="text-lg text-muted measure"><span class="d-full">Desde 1994, o Gutmann &amp; Silva assessora empresas e famílias com uma equipe que hoje reúne mais de 30 profissionais, atuando em Direito Empresarial, Tributário, Trabalhista, Cível, Família &amp; Sucessões e Previdenciário — com sede no Paraná e atuação registrada também em São Paulo e Santa Catarina.</span><span class="d-short">Desde 1994, assessoramos empresas e famílias em seis áreas do Direito, no Paraná, São Paulo e Santa Catarina.</span></p>
+    <div class="hero-foot">
+      <div class="hero-actions">
+        <a class="btn" href="contato.html">Fale com o escritório <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+        <a class="link-underline" href="o-escritorio.html">Conheça nossa história</a>
+      </div>
+      <a class="scroll-cue" href="#trajetoria">Role para conhecer <span class="circle"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M19 12l-7 7-7-7"/></svg></span></a>
+    </div>
+  </div>
+</section>
+
+<section class="section dark" id="trajetoria" style="padding-block:40px 64px">
+  <div class="wrap">
+    <div class="intro">
+      <div class="intro-copy">
+        <h2 class="h-lead">30 anos não se acumulam — se constroem, um cliente de cada vez</h2>
+        <p class="text-muted"><span class="d-full">Fundado em 1994, o Gutmann &amp; Silva é hoje um dos escritórios mais consolidados do Paraná, com uma trajetória construída quase inteiramente por indicação e relacionamento de longo prazo — a prova mais concreta de que confiança, no Direito, se conquista com o tempo. Nossa atuação nasceu no Paraná e, ao longo de três décadas, se estendeu a São Paulo e Santa Catarina, sempre mantendo o mesmo princípio: entender o negócio ou a situação do cliente antes de indicar qualquer caminho jurídico.</span><span class="d-short">Fundado em 1994, o Gutmann &amp; Silva construiu sua trajetória por indicação e relacionamento de longo prazo. Atuamos no Paraná, São Paulo e Santa Catarina, sempre entendendo a situação do cliente antes de indicar qualquer caminho jurídico.</span></p>
+      </div>
+      <div class="img-slot has-img"><img src="assets/img/fachada.jpg" alt="Fachada do escritório Gutmann &amp; Silva em São José dos Pinhais" loading="lazy" decoding="async"></div>
+    </div>
+    <div class="bento">
+      <div class="bento-row">
+        <article class="card-dark"><div class="icon-box"><svg class="icon icon-lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l4 2"/></svg></div><div class="card-copy"><h3 class="h-card">Mais de 30 anos de atuação contínua</h3><p>Uma presença constante no mercado jurídico paranaense e nacional, construída por relacionamentos duradouros e atuação especializada.</p></div></article>
+        <article class="card-dark"><div class="icon-box"><svg class="icon icon-lg" viewBox="0 0 24 24" aria-hidden="true"><path d="m14.5 12.5-8 8a2.12 2.12 0 1 1-3-3l8-8"/><path d="m16 16 6-6"/><path d="m8 8 6-6"/><path d="m9 7 8 8"/><path d="m21 11-8-8"/></svg></div><div class="card-copy"><h3 class="h-card">Equipe multidisciplinar</h3><p>Mais de 30 advogados e advogadas organizados por área de especialização, garantindo profundidade técnica em cada frente.</p></div></article>
+      </div>
+      <div class="bento-row wide">
+        <article class="card-dark card-tall"><div class="icon-box"><svg class="icon icon-lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.9 11.1A7.3 7.3 0 0 0 20 10a8 8 0 0 0-16 0c0 5 5.54 10.19 7.4 11.8a1 1 0 0 0 1.2 0c.27-.23.55-.48.82-.74"/><circle cx="12" cy="10" r="3"/><path d="M16 18h6M19 15v6"/></svg></div><div class="card-copy"><h3 class="h-card">Presença em três estados</h3><p>Registro ativo nas seccionais da OAB do Paraná, São Paulo e Santa Catarina, permitindo atuação coordenada em operações que ultrapassam fronteiras estaduais.</p></div></article>
+        <article class="card-dark card-tall card-split"><div class="card-split-copy"><div class="icon-box"><svg class="icon icon-lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 7.5V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h3.5"/><path d="M16 2v4M8 2v4M3 10h5"/><circle cx="16" cy="16" r="6"/><path d="M16 14v2.2l1.5 1.3"/></svg></div><h3 class="h-card">Relacionamento de longo prazo</h3><p>Construímos vínculos duradouros com empresas e famílias, entendendo cada fase de sua trajetória com discrição e continuidade.</p></div><div class="img-slot has-img"><img src="assets/img/recepcao.jpg" alt="Recepção do escritório Gutmann &amp; Silva" loading="lazy" decoding="async"></div></article>
       </div>
     </div>
-    <div class="lines lines--photo lines--hero"><img src="assets/img/fachada.jpg" alt="Fachada do escritório Gutmann &amp;amp; Silva em São José dos Pinhais" decoding="async"><span class="lines__year" aria-hidden="true">1994</span></div>
   </div>
 </section>
 
-<section class="section section--sand">
+<section class="section dark bordered" aria-label="Números do escritório">
+  <div class="wrap stats">
+    <div class="stat"><div><p class="stat-num">30 ANOS</p><p class="stat-label">De história (desde 1994)</p></div><p class="text-muted">Uma trajetória construída por confiança e relacionamento de longo prazo.</p></div>
+    <div class="stat"><div><p class="stat-num">30+ ADVOGADOS</p><p class="stat-label">Capacitados</p></div><p class="text-muted">Organizados por área de especialização para atender com profundidade técnica.</p></div>
+    <div class="stat"><div><p class="stat-num">3 ESTADOS</p><p class="stat-label">De atuação</p></div><p class="text-muted">Paraná, São Paulo e Santa Catarina, com registro ativo nas respectivas seccionais da OAB.</p></div>
+  </div>
+</section>
+
+<section class="section light" id="reconhecimentos">
   <div class="wrap">
-    <div class="statement">
-      <p class="eyebrow">Desde 1994</p>
-      <div class="statement__body">
-        <h2 class="h-statement">30 anos não se constroem — se acumulam, <em>um cliente de cada vez</em></h2>
-        <div class="cols-2">
-          <p>Fundado em 1994, o Gutmann &amp; Silva é hoje um dos escritórios mais consolidados do Paraná, com uma trajetória construída quase inteiramente por indicação e relacionamento de longo prazo — a prova mais concreta de que confiança, no Direito, se conquista com o tempo. Nossa atuação nasceu no Paraná e, ao longo de três décadas, se estendeu a São Paulo e Santa Catarina, sempre mantendo o mesmo princípio: entender o negócio ou a situação do cliente antes de indicar qualquer caminho jurídico.</p>
-          <p>Hoje somos mais de 28 advogados e advogadas organizados por área de especialização.</p>
-        </div>
-      </div>
+    <div class="section-head"><h2 class="h-section">Reconhecimentos</h2></div>
+    <div class="awards">
+      <article class="card-light"><div class="img-slot has-img"><img src="assets/img/fachada-portao.jpg" alt="Entrada do escritório Gutmann &amp; Silva" loading="lazy" decoding="async"></div><div class="card-copy"><h3>Eleito Melhor Escritório de Advocacia do Ano em São José dos Pinhais em 2022, 2024 e 2025</h3><p>Reconhecimento da comunidade local por atuação destacada e relacionamento duradouro.</p></div></article>
+      <article class="card-light"><div class="img-slot has-img"><img src="assets/img/sala-espera.jpg" alt="Sala de espera do escritório" loading="lazy" decoding="async"></div><div class="card-copy"><h3>Homenageado pela Assembleia Legislativa do Paraná</h3><p>Reconhecimento institucional por contribuição ao desenvolvimento jurídico e social do estado.</p></div></article>
+      <article class="card-light"><div class="img-slot has-img"><img src="assets/img/sala-reuniao-4.jpg" alt="Sala de reuniões do escritório" loading="lazy" decoding="async"></div><div class="card-copy"><h3>Nota 4,9 no Google, com 139 avaliações</h3><p>Aprovação da comunidade que atendemos, refletindo atendimento personalizado e orientação confiável.</p></div></article>
     </div>
-    <ul class="figures">
-      <li><strong>30</strong><span>anos de história (desde 1994)</span></li>
-      <li><strong>30+</strong><span>profissionais</span></li>
-      <li><strong>3</strong><span>estados de atuação: Paraná, São Paulo e Santa Catarina</span></li>
-    </ul>
   </div>
 </section>
 
-<section class="section section--gradient">
+<section class="section light" id="areas">
   <div class="wrap">
-    <div class="statement statement--dark">
-      <p class="eyebrow">O que fazemos</p>
-      <h2>Áreas de <em>Atuação</em></h2>
-    </div>
-    <div class="tiles"><a class="tile" href="area-empresarial.html">
-  <h3>Empresarial</h3>
-  <p>Assessoria jurídica contínua para empresas em constituição societária, contratos, governança e operações do dia a dia do negócio.</p>
-  <span class="tile__go" aria-hidden="true"><svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span>
-</a>
-<a class="tile" href="area-tributario.html">
-  <h3>Tributário</h3>
-  <p>Planejamento e orientação tributária para pessoas físicas e jurídicas, incluindo análise de enquadramento e regimes especiais.</p>
-  <span class="tile__go" aria-hidden="true"><svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span>
-</a>
-<a class="tile" href="area-trabalhista.html">
-  <h3>Trabalhista</h3>
-  <p>Consultoria preventiva e representação em Direito do Trabalho, tanto para empregadores quanto para pessoas físicas.</p>
-  <span class="tile__go" aria-hidden="true"><svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span>
-</a>
-<a class="tile" href="area-civel.html">
-  <h3>Cível</h3>
-  <p>Atuação em contratos, responsabilidade civil, questões imobiliárias e demais relações regidas pelo Direito Civil.</p>
-  <span class="tile__go" aria-hidden="true"><svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span>
-</a>
-<a class="tile" href="area-familia-sucessoes.html">
-  <h3>Família &amp; Sucessões</h3>
-  <p>Orientação em planejamento sucessório, inventários, partilhas e questões de direito de família, com a discrição que o tema exige.</p>
-  <span class="tile__go" aria-hidden="true"><svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span>
-</a>
-<a class="tile" href="area-previdenciario.html">
-  <h3>Previdenciário</h3>
-  <p>Análise de direitos previdenciários, benefícios e questões relacionadas ao INSS, incluindo situações de isenção fiscal.</p>
-  <span class="tile__go" aria-hidden="true"><svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span>
-</a></div>
-    <div class="row-end"><a class="btn btn--primary" href="areas.html"><span>Ver todas as áreas em detalhe</span><svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a></div>
+    <div class="section-head" style="margin-bottom:80px"><h2 class="h-section">Áreas de Atuação</h2><p class="text-muted">Atuamos em seis frentes do Direito, com equipes dedicadas a cada área para oferecer orientação especializada a empresas e famílias.</p></div>
+    <div class="areas-grid"><a class="area-card" href="area-empresarial.html"><h3>Empresarial</h3><p>Estruturação societária, contratos comerciais, governança corporativa e operações do dia a dia.</p><span class="link-arrow">Ver detalhes <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></a><a class="area-card" href="area-tributario.html"><h3>Tributário</h3><p>Planejamento fiscal, análise de regimes tributários e orientação contínua para empresas e pessoas físicas.</p><span class="link-arrow">Ver detalhes <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></a><a class="area-card" href="area-trabalhista.html"><h3>Trabalhista</h3><p>Prevenção de conflitos, negociação, consultoria trabalhista e defesa em processos judiciais.</p><span class="link-arrow">Ver detalhes <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></a><a class="area-card" href="area-civel.html"><h3>Cível</h3><p>Contratos, responsabilidade civil, questões imobiliárias e demais relações regidas pelo Direito Civil.</p><span class="link-arrow">Ver detalhes <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></a><a class="area-card" href="area-familia-e-sucessoes.html"><h3>Família & Sucessões</h3><p>Planejamento sucessório, inventários, partilhas e direito de família com atenção e discrição.</p><span class="link-arrow">Ver detalhes <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></a><a class="area-card" href="area-previdenciario.html"><h3>Previdenciário</h3><p>Direitos previdenciários, benefícios, INSS e análise fiscal para pessoas físicas e jurídicas.</p><span class="link-arrow">Ver detalhes <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></a></div>
+    <div class="areas-more"><a class="link-arrow" href="areas-de-atuacao.html">Ver todas as áreas em detalhe <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
   </div>
 </section>
 
-<section class="spot">
-  <div class="spot__text">
-    <p class="eyebrow">Presença</p>
-    <h2>Onde <em>atuamos</em></h2>
-    <p>O Gutmann &amp; Silva tem sede em São José dos Pinhais, no Paraná, e atua com registros ativos nas seccionais da OAB de três estados:</p>
-    <p class="muted">Essa presença em três estados permite acompanhar clientes com operações que ultrapassam fronteiras estaduais, mantendo o mesmo padrão de atendimento em qualquer frente.</p>
-  </div>
-  <div class="spot__visual">
-    <ul class="states">
-      <li class="is-hq"><span class="states__code" aria-hidden="true">PR</span><strong>Paraná (OAB/PR)</strong><span>sede do escritório</span></li>
-      <li><span class="states__code" aria-hidden="true">SP</span><strong>São Paulo (OAB/SP)</strong></li>
-      <li><span class="states__code" aria-hidden="true">SC</span><strong>Santa Catarina (OAB/SC)</strong></li>
-    </ul>
-  </div>
-</section>
-
-<section class="section section--sky">
+<section class="section light">
   <div class="wrap">
-    <div class="statement">
-      <p class="eyebrow">Reconhecimentos</p>
-      <div class="statement__body">
-        <h2>Reconhecimentos</h2>
-        <p class="lead-dark">Ao longo de nossa trajetória, o Gutmann &amp; Silva foi reconhecido por instituições e pela comunidade que atende:</p>
-      </div>
-    </div>
-    <ul class="cards">
-      <li class="card"><span class="card__kicker">Prêmio</span><p>Eleito Melhor Escritório de Advocacia do Ano em São José dos Pinhais em 2022, 2024 e 2025</p></li>
-      <li class="card"><span class="card__kicker">Homenagem</span><p>Homenageado pela Assembleia Legislativa do Paraná</p></li>
-      <li class="card"><span class="card__kicker">Google</span><p>Nota 4,9 no Google, com 139 avaliações</p></li>
-    </ul>
+    <h2 class="h-section faq-title">Por que escolher um escritório com trajetória</h2>
+    <div class="accordion"><details class="acc-item" open><summary>1. Histórico consolidado.<span class="acc-toggle"><svg class="icon i-plus" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><svg class="icon i-minus" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg></span></summary><div class="acc-body">Mais de três décadas de atuação contínua no mercado jurídico paranaense e nacional.</div></details><details class="acc-item"><summary>2. Equipe multidisciplinar.<span class="acc-toggle"><svg class="icon i-plus" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><svg class="icon i-minus" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg></span></summary><div class="acc-body">Profissionais dedicados a áreas específicas do Direito, permitindo profundidade técnica em cada frente.</div></details><details class="acc-item"><summary>3. Presença em três estados.<span class="acc-toggle"><svg class="icon i-plus" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><svg class="icon i-minus" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg></span></summary><div class="acc-body">Registro em três seccionais da OAB (PR, SP e SC), acompanhando clientes com operações em mais de um estado.</div></details><details class="acc-item"><summary>4. Relacionamento de longo prazo.<span class="acc-toggle"><svg class="icon i-plus" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><svg class="icon i-minus" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg></span></summary><div class="acc-body">Construímos vínculos duradouros com empresas e famílias, entendendo cada fase de sua trajetória.</div></details></div>
   </div>
 </section>
 
-<section class="section">
+<section class="section dark cta" aria-labelledby="cta-t">
+  <div class="glow" aria-hidden="true"></div>
   <div class="wrap">
-    <div class="statement statement--dark">
-      <p class="eyebrow">Trajetória</p>
-      <h2>Por que escolher um escritório com <em>trajetória</em></h2>
-    </div>
-    <ul class="reasons">
-      <li><h3>Histórico consolidado.</h3><p>Mais de três décadas de atuação contínua no mercado jurídico paranaense e nacional.</p></li>
-      <li><h3>Equipe multidisciplinar.</h3><p>Profissionais dedicados a áreas específicas do Direito, permitindo profundidade técnica em cada frente.</p></li>
-      <li><h3>Presença em três estados.</h3><p>Registro em três seccionais da OAB (PR, SP e SC), acompanhando clientes com operações em mais de um estado.</p></li>
-      <li><h3>Relacionamento de longo prazo.</h3><p>Construímos vínculos duradouros com empresas e famílias, entendendo cada fase de sua trajetória.</p></li>
-    </ul>
-  </div>
-</section>
-
-<section class="cta-band">
-  <div class="wrap cta-band__inner">
-    <h2>Precisa de orientação jurídica <em>especializada?</em></h2>
-    <div class="cta-band__side">
-      <p>Entre em contato com o Gutmann &amp; Silva e converse com uma equipe preparada para entender sua situação antes de indicar qualquer caminho.</p>
-      <a class="btn btn--light" href="contato.html"><span>Fale conosco</span><svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
+    <div class="cta-box">
+      <div class="cta-copy"><h2 id="cta-t">Precisa de orientação jurídica especializada?</h2><p class="m-hide">Entre em contato com o Gutmann &amp; Silva e converse com uma equipe preparada para entender sua situação antes de indicar qualquer caminho.</p></div>
+      <a class="btn" href="contato.html">Fale conosco <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
     </div>
   </div>
 </section>
 </main>
 <footer class="site-footer">
   <div class="wrap">
-    <div class="footer__brand"><a class="logo logo--xl" href="index.html" aria-label="Gutmann &amp; Silva Advogados Associados — página inicial">
-  <span class="logo__line">Gutmann &amp; Silva</span>
-  <span class="logo__line logo__line--sub">Advogados Associados<i class="logo__sq" aria-hidden="true"></i></span>
-</a></div>
-    <div class="footer__grid">
-      <div class="footer__col">
-        <h2>Escritório</h2>
-        <ul>
-          <li><a href="escritorio.html">O Escritório</a></li>
-          <li><a href="equipe.html">Equipe</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="contato.html">Contato</a></li>
-        </ul>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <!-- Logo: substitua pela imagem oficial -->
+        <a class="logo" href="index.html"><img class="logo-img" src="assets/logo.webp" width="1908" height="1045" alt="Gutmann &amp; Silva Advogados Associados"></a>
+        <p>Escritório de Advocacia com sede em São José dos Pinhais, Paraná, atuando em Direito Empresarial, Tributário, Trabalhista, Cível, Família &amp; Sucessões e Previdenciário.</p>
       </div>
-      <div class="footer__col">
-        <h2>Áreas de Atuação</h2>
-        <ul><li><a href="area-empresarial.html">Empresarial</a></li>
-<li><a href="area-tributario.html">Tributário</a></li>
-<li><a href="area-trabalhista.html">Trabalhista</a></li>
-<li><a href="area-civel.html">Cível</a></li>
-<li><a href="area-familia-sucessoes.html">Família &amp; Sucessões</a></li>
-<li><a href="area-previdenciario.html">Previdenciário</a></li></ul>
-      </div>
-      <div class="footer__col">
-        <h2>Contato</h2>
-        <ul>
+      <div class="footer-cols">
+        <div class="footer-col"><h4>Áreas de Atuação</h4><ul><li><a href="area-empresarial.html">Empresarial</a></li><li><a href="area-tributario.html">Tributário</a></li><li><a href="area-trabalhista.html">Trabalhista</a></li><li><a href="area-civel.html">Cível</a></li><li><a href="area-familia-e-sucessoes.html">Família & Sucessões</a></li><li><a href="area-previdenciario.html">Previdenciário</a></li></ul></div>
+        <div class="footer-col"><h4>Navegação</h4><ul>
+          <li><a href="index.html">Início</a></li><li><a href="o-escritorio.html">O Escritório</a></li><li><a href="areas-de-atuacao.html">Áreas de Atuação</a></li><li><a href="blog.html">Blog</a></li><li><a href="equipe.html">Equipe</a></li><li><a href="contato.html">Contato</a></li></ul></div>
+        <div class="footer-col"><h4>Escritório</h4><ul>
+          <li><address>Rua João Ângelo Cordeiro, 272 — São Pedro, São José dos Pinhais/PR — CEP 83005-570</address></li>
           <li><a href="tel:+554130813679">(41) 3081-3679</a></li>
-          <li>WhatsApp <a href="https://wa.me/554188141335" target="_blank" rel="noopener">+55 41 8814-1335</a></li>
-          <li><a href="mailto:contato@gutmannesilva.com.br">contato@gutmannesilva.com.br</a></li>
-        </ul>
-      </div>
-      <div class="footer__col">
-        <h2>Endereço</h2>
-        <address>Rua João Ângelo Cordeiro, 272 — São Pedro, São José dos Pinhais/PR — CEP 83005-570</address>
+          <li><a href="mailto:contato@gutmannesilva.com.br">contato@gutmannesilva.com.br</a></li></ul></div>
       </div>
     </div>
-    <div class="footer__bottom">
-      <span>© 2026 Gutmann &amp; Silva Advogados Associados</span>
-      <span>OAB/PR · OAB/SP · OAB/SC</span>
+    <div class="footer-bottom">
+      <p>© 2026 GUTMANN &amp; SILVA ADVOGADOS. TODOS OS DIREITOS RESERVADOS.</p>
+      <nav aria-label="Legal"><a href="#">Privacidade</a><a href="#">Termos de Uso</a></nav>
     </div>
   </div>
 </footer>
