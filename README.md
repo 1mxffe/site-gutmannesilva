@@ -15,6 +15,7 @@ aprovada no Notion ("Copy do Site — Gutmann & Silva Advogados Associados").
 | `equipe.html` | Sócios |
 | `contato.html` | Contato + newsletter |
 | `assets/styles.css`, `assets/main.js` | Estilo e comportamento compartilhados |
+| `assets/img/` | Fotos do escritório e dos sócios (otimizadas, ≤2000 px) e imagens das 6 áreas (geradas no Figma) |
 
 ## Como editar
 
