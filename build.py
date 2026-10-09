@@ -329,8 +329,18 @@ def crumbs(*items):
     return f'<ol class="crumbs" aria-label="Você está em">{"".join(li)}</ol>'
 
 
-def page_hero(crumb_items, title_html, lead=None, panel_html=""):
+def photo_panel(src, alt, inner="", extra=""):
+    """Painel com foto real (assets/img/<src>.jpg). `inner` fica sobre a foto (ex.: o ano 1994)."""
+    return (f'<div class="lines lines--photo {extra}">'
+            f'<img src="assets/img/{src}.jpg" alt="{e(alt)}" decoding="async">{inner}</div>')
+
+
+def page_hero(crumb_items, title_html, lead=None, panel_html="", photo=None):
     lead_html = f'<p class="lead">{lead}</p>' if lead else ""
+    if photo:
+        panel = photo_panel(*photo, inner=panel_html)
+    else:
+        panel = f'<div class="lines" aria-hidden="true">{panel_html}</div>'
     return f"""<section class="page-hero">
   <div class="page-hero__grid">
     <div class="page-hero__text">
@@ -338,7 +348,7 @@ def page_hero(crumb_items, title_html, lead=None, panel_html=""):
       <h1>{title_html}</h1>
       {lead_html}
     </div>
-    <div class="lines" aria-hidden="true">{panel_html}</div>
+    {panel}
   </div>
 </section>"""
 
@@ -381,7 +391,7 @@ def page_home():
         </div>
       </div>
     </div>
-    <div class="lines lines--hero" aria-hidden="true"><span class="lines__year">1994</span></div>
+    {photo_panel("fachada", "Fachada do escritório Gutmann &amp; Silva em São José dos Pinhais", '<span class="lines__year" aria-hidden="true">1994</span>', "lines--hero")}
   </div>
 </section>
 
@@ -490,7 +500,8 @@ def page_escritorio():
     )
     main = f"""{page_hero((("Home", HOME), ("O Escritório", None)), "Sobre o <em>Gutmann &amp; Silva</em>",
         "Fundado em 1994, o Gutmann &amp; Silva Advogados Associados nasceu no Paraná com um propósito simples: oferecer assessoria jurídica séria, próxima e tecnicamente sólida para empresas e famílias. Ao longo de três décadas, esse propósito não mudou — o que mudou foi o tamanho da equipe e a amplitude das áreas que passamos a atender.",
-        '<span class="lines__year">1994</span>')}
+        '<span class="lines__year" aria-hidden="true">1994</span>',
+        photo=("recepcao", "Recepção do escritório Gutmann &amp; Silva"))}
 
 <section class="section section--sand">
   <div class="wrap statement">
@@ -511,6 +522,18 @@ def page_escritorio():
     <div class="tabs" data-tabs>
       <div class="tabs__list" role="tablist" aria-label="Nossa história">{tabs}</div>
       {panels}
+    </div>
+  </div>
+</section>
+
+<section class="section section--white">
+  <div class="wrap">
+    <h2 class="h-accent">Nosso espaço</h2>
+    <div class="gallery">
+      <figure><img src="assets/img/sala-reuniao-4.jpg" alt="Sala de reuniões com mesa e cadeiras estofadas" loading="lazy" decoding="async"></figure>
+      <figure><img src="assets/img/sala-espera.jpg" alt="Sala de espera do escritório" loading="lazy" decoding="async"></figure>
+      <figure><img src="assets/img/sala-reuniao-2.jpg" alt="Sala de reuniões com a identidade do escritório" loading="lazy" decoding="async"></figure>
+      <figure><img src="assets/img/fachada-portao.jpg" alt="Entrada do escritório em São José dos Pinhais" loading="lazy" decoding="async"></figure>
     </div>
   </div>
 </section>
@@ -551,7 +574,7 @@ def page_escritorio():
 
 
 def page_areas():
-    main = f"""{page_hero((("Home", HOME), ("Áreas de Atuação", None)), "Áreas de <em>Atuação</em>")}
+    main = f"""{page_hero((("Home", HOME), ("Áreas de Atuação", None)), "Áreas de <em>Atuação</em>", photo=("sala-reuniao-3", "Sala de reuniões do escritório Gutmann &amp; Silva"))}
 <section class="section section--gradient">
   <div class="wrap"><div class="tiles">{area_tiles()}</div></div>
 </section>
@@ -576,7 +599,8 @@ def page_area(a):
     </div>
   </div>
 </section>"""
-    main = f"""{page_hero((("Home", HOME), ("Áreas de Atuação", "areas.html"), (a["titulo"], None)), e(a['titulo']), e(a['abertura']))}
+    main = f"""{page_hero((("Home", HOME), ("Áreas de Atuação", "areas.html"), (a["titulo"], None)), e(a['titulo']), e(a['abertura']),
+        photo=("area-" + a["slug"], "Ilustração da área de " + a["nome"]))}
 <section class="section">
   <div class="wrap practice">
     <div>
@@ -617,7 +641,8 @@ def page_blog():
         for p in sorted(POSTS, key=lambda p: p["data"], reverse=True)
     )
     main = f"""{page_hero((("Home", HOME), ("Blog", None)), "Blog <em>Gutmann &amp; Silva</em>",
-        "Reunimos aqui orientações e atualizações sobre as áreas em que atuamos, organizadas para ajudar empresas e pessoas físicas a entender melhor seus direitos e obrigações. Nosso conteúdo é informativo — não substitui uma consulta jurídica personalizada.")}
+        "Reunimos aqui orientações e atualizações sobre as áreas em que atuamos, organizadas para ajudar empresas e pessoas físicas a entender melhor seus direitos e obrigações. Nosso conteúdo é informativo — não substitui uma consulta jurídica personalizada.",
+        photo=("sala-espera", "Sala de espera do escritório Gutmann &amp; Silva"))}
 <section class="section section--white">
   <div class="wrap">
     <div class="filters" role="group" aria-label="Categorias do blog">{''.join(chips)}</div>
@@ -632,7 +657,7 @@ def page_blog():
 
 def page_post(p):
     a = next(x for x in AREAS if x["slug"] == p["area"])
-    main = f"""{page_hero((("Home", HOME), ("Blog", "blog.html"), (a["nome"], f"blog.html#{a['slug']}")), e(p['titulo']))}
+    main = f"""{page_hero((("Home", HOME), ("Blog", "blog.html"), (a["nome"], f"blog.html#{a['slug']}")), e(p['titulo']), photo=("area-" + a["slug"], "Ilustração da área de " + a["nome"]))}
 <section class="section section--white">
   <div class="wrap">
     <article class="article">{p['corpo']}</article>
@@ -645,10 +670,10 @@ def page_post(p):
     return (f"{p['titulo']} | Gutmann & Silva Advogados", p["resumo"], "blog", main)
 
 
-def partner(initials, name, role, bio, regs):
+def partner(img, name, role, bio, regs):
     chips = "".join(f"<li>{r}</li>" for r in regs)
     return f"""<article class="partner">
-  <div class="partner__photo" aria-hidden="true"><span>{initials}</span></div>
+  <div class="partner__photo"><img src="assets/img/{img}.jpg" alt="Retrato de {name}" loading="lazy" decoding="async"></div>
   <div class="partner__band"><h2>{name}</h2><span>{role}</span></div>
   <div class="partner__body">
     <p>{bio}</p>
@@ -659,11 +684,12 @@ def partner(initials, name, role, bio, regs):
 
 def page_equipe():
     main = f"""{page_hero((("Home", HOME), ("Equipe", None)), "Nossa <em>Equipe</em>",
-        "O Gutmann &amp; Silva reúne mais de 30 profissionais organizados por área de especialização, com registro na OAB em três estados: Paraná, São Paulo e Santa Catarina. À frente da condução jurídica, institucional e empresarial do escritório estão nossos sócios.")}
+        "O Gutmann &amp; Silva reúne mais de 30 profissionais organizados por área de especialização, com registro na OAB em três estados: Paraná, São Paulo e Santa Catarina. À frente da condução jurídica, institucional e empresarial do escritório estão nossos sócios.",
+        photo=("sala-reuniao-1", "Sala de reuniões do escritório Gutmann &amp; Silva"))}
 <section class="section section--white">
   <div class="wrap partners">
-    {partner("CG", "Celso Fernando Gutmann", "Sócio fundador", "Formado pela PUC/PR (1995). Atua em Direito Cível, Trabalhista e Empresarial, com especialização em Direito Empresarial e Civil.", ["OAB/PR 21.713", "OAB/SP 402.027"])}
-    {partner("CS", "Cristiano da Silva", "Sócio", "Graduado pela PUC/PR (2011), pós-graduado em Direito Civil e Processo Civil pela UNICURITIBA (2014), com atuação também em Legislação Tributária.", ["OAB/PR 60.125", "OAB/SP 401.811"])}
+    {partner("celso-gutmann", "Celso Fernando Gutmann", "Sócio fundador", "Formado pela PUC/PR (1995). Atua em Direito Cível, Trabalhista e Empresarial, com especialização em Direito Empresarial e Civil.", ["OAB/PR 21.713", "OAB/SP 402.027"])}
+    {partner("cristiano-silva", "Cristiano da Silva", "Sócio", "Graduado pela PUC/PR (2011), pós-graduado em Direito Civil e Processo Civil pela UNICURITIBA (2014), com atuação também em Legislação Tributária.", ["OAB/PR 60.125", "OAB/SP 401.811"])}
   </div>
 </section>
 {cta_final()}"""
@@ -675,7 +701,8 @@ def page_equipe():
 def page_contato():
     c = CONTATO
     main = f"""{page_hero((("Home", HOME), ("Contato", None)), "Fale com o <em>Gutmann &amp; Silva</em>",
-        "Estamos à disposição para entender sua situação e indicar o melhor caminho jurídico. Preencha o formulário abaixo ou utilize um dos canais de contato direto.")}
+        "Estamos à disposição para entender sua situação e indicar o melhor caminho jurídico. Preencha o formulário abaixo ou utilize um dos canais de contato direto.",
+        photo=("fachada-portao", "Entrada do escritório Gutmann &amp; Silva"))}
 <section class="section section--white" id="formulario">
   <div class="wrap contact">
     <form class="form" data-form data-endpoint="{e(FORM_ENDPOINT)}" data-success="Mensagem enviada." novalidate>
