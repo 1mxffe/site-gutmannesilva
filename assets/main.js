@@ -8,8 +8,8 @@
     onScroll();
   }
   if (!reduce && 'IntersectionObserver' in window) {
-    var groups = '.index-list, .notes, .recog, .partners-strip, .partners, .areas-grid, .services, .timeline, .mvv, .other-areas, .footer-cols';
-    var singles = '.section-head, .two-col-head, .intro-copy, .intro .img-slot, .cta-box, .areas-more, .highlight';
+    var groups = '.bento-row, .awards, .areas-grid, .stats, .services, .accordion, .other-areas, .footer-cols';
+    var singles = '.section-head, .two-col-head, .intro-copy, .intro .img-slot, .cta-box, .faq-title, .areas-more, .article-cta';
     var targets = [];
     document.querySelectorAll(groups).forEach(function (g) {
       Array.prototype.forEach.call(g.children, function (c, i) { c.style.setProperty('--d', (i * 100) + 'ms'); targets.push(c); });
@@ -27,24 +27,6 @@
     }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
     targets.forEach(function (el) { el.classList.add('reveal'); io.observe(el); });
   }
-
-  // Índice de áreas: foto da área segue o cursor (só com mouse)
-  var rows = document.querySelectorAll('.index-row[data-photo]');
-  if (rows.length && window.matchMedia && window.matchMedia('(hover: hover) and (min-width: 901px)').matches) {
-    var pic = document.createElement('div');
-    pic.className = 'index-photo'; pic.setAttribute('aria-hidden', 'true');
-    document.body.appendChild(pic);
-    rows.forEach(function (row) {
-      var img = new Image(); img.src = row.dataset.photo;
-      row.addEventListener('mouseenter', function () { pic.style.backgroundImage = 'url(' + row.dataset.photo + ')'; pic.classList.add('on'); });
-      row.addEventListener('mouseleave', function () { pic.classList.remove('on'); });
-      row.addEventListener('mousemove', function (e) {
-        var x = Math.min(e.clientX + 28, window.innerWidth - 330), y = Math.min(e.clientY - 110, window.innerHeight - 240);
-        pic.style.left = x + 'px'; pic.style.top = Math.max(12, y) + 'px';
-      });
-    });
-  }
-
   // Menu mobile
   var toggle = document.querySelector('.menu-toggle');
   var nav = document.querySelector('.main-nav');
