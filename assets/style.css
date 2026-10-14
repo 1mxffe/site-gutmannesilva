@@ -554,3 +554,101 @@ ul { margin: 0; padding: 0; list-style: none; }
 .legal-block ul { list-style: disc; padding-left: 1.3em; display: flex; flex-direction: column; gap: 8px; }
 .legal-block a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
 @media (max-width: 900px) { .legal { grid-template-columns: minmax(0, 1fr); gap: 32px; } .legal-toc { position: static; } }
+
+/* =====================================================================
+   Movimento — só animação; layout, cores e textos não mudam.
+   Tudo aqui depende de html.anim (desligado com "reduzir movimento").
+   ===================================================================== */
+:root { --ease-x: cubic-bezier(.16, 1, .3, 1); --ease-io: cubic-bezier(.76, 0, .24, 1); }
+
+/* Cortina de carregamento e de transição entre páginas */
+.loader { display: none; }
+html.has-loader .loader { display: block; position: fixed; inset: 0; z-index: 200; }
+html.has-loader body { overflow: hidden; }
+.loader-panel {
+  position: absolute; inset: 0; display: grid; place-items: center;
+  background: radial-gradient(120% 90% at 50% 45%, #14283d 0%, var(--ink-2) 62%, #060c13 100%);
+  clip-path: inset(0);
+}
+.loader-logo { width: min(240px, 52vw); height: auto; opacity: 0; transform: translateY(14px) scale(.97); }
+html.loader-first .loader-logo { animation: loader-logo .9s var(--ease-x) .15s forwards; }
+.loader-bar { position: absolute; left: 50%; bottom: 18vh; width: 120px; height: 1px; margin-left: -60px; background: rgba(255, 255, 255, .14); overflow: hidden; opacity: 0; }
+html.loader-first .loader-bar { opacity: 1; }
+.loader-bar::after { content: ""; position: absolute; inset: 0; background: var(--blue); transform: scaleX(0); transform-origin: 0 50%; }
+html.loader-first .loader-bar::after { animation: loader-bar 1.1s var(--ease-io) .1s forwards; }
+html.covering .loader-panel { clip-path: inset(100% 0 0 0); }
+html.covering.covering-in .loader-panel { clip-path: inset(0); transition: clip-path .65s var(--ease-io); }
+.loader.leaving .loader-panel { clip-path: inset(0 0 100% 0); transition: clip-path 1s var(--ease-io) .1s; }
+.loader.leaving .loader-logo, .loader.leaving .loader-bar { opacity: 0; transition: opacity .3s ease; animation: none; }
+@keyframes loader-logo { to { opacity: 1; transform: none; } }
+@keyframes loader-bar { to { transform: scaleX(1); } }
+
+/* Entradas (o JS adiciona as classes; sem JS tudo aparece normalmente) */
+html.anim .rv { opacity: 0; transform: translate3d(0, 34px, 0); transition: opacity 1.1s var(--ease-x), transform 1.3s var(--ease-x); transition-delay: var(--d, 0ms); }
+html.anim .rv.in { opacity: 1; transform: none; }
+html.anim .hero .wrap > *, html.anim .page-hero-copy > * { animation: none; }
+
+/* Títulos: palavra por palavra, subindo de trás de uma máscara */
+html.anim .sw { display: inline-block; overflow: hidden; vertical-align: top; padding: 0 .08em .16em 0; margin: 0 -.08em -.16em 0; }
+html.anim .sw.done { overflow: visible; }
+html.anim .sw > span { display: inline-block; }
+html.anim .split .sw > span { transform: translate3d(0, 115%, 0); transition: transform 1.25s var(--ease-x); transition-delay: calc(var(--d, 0ms) + var(--i, 0) * 70ms); }
+html.anim .split.in .sw > span { transform: none; }
+
+/* Imagens: a cortina abre e o zoom assenta */
+html.anim .rvi { clip-path: inset(12% 12% 12% 12% round 16px); transition: clip-path 1.6s var(--ease-x); transition-delay: var(--d, 0ms); }
+html.anim .rvi.in { clip-path: inset(0 round 16px); }
+html.anim .rvi img { scale: 1.22; transition: scale 2.2s var(--ease-x); transition-delay: var(--d, 0ms); }
+html.anim .rvi.in img { scale: 1; }
+html.anim .rvi.in img.px-img { scale: 1.1; }
+.px-img { scale: 1.1; will-change: translate; }
+
+/* Brilhos e imagens se movem em ritmos diferentes ao rolar */
+.glow { will-change: translate; }
+
+/* Barra de leitura no cabeçalho */
+.reading-progress { position: absolute; left: 0; right: 0; bottom: -1px; height: 2px; background: var(--blue); transform: scaleX(var(--p, 0)); transform-origin: 0 50%; pointer-events: none; }
+
+/* Navegação: sublinhado que cresce, submenu que desce, menu mobile em cortina */
+.main-nav > ul > li > a, .main-nav .nav-trigger { background: linear-gradient(currentColor, currentColor) 0 calc(100% + 5px) / 0 1px no-repeat; transition: background-size .45s var(--ease-x), color .2s ease; }
+.main-nav > ul > li > a:hover, .main-nav .nav-trigger:hover, .main-nav [aria-current="page"] { background-size: 100% 1px; }
+.has-dropdown:hover .dropdown, .has-dropdown:focus-within .dropdown, .has-dropdown.open .dropdown { animation: dd-in .4s var(--ease-x); }
+@keyframes dd-in { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: none; } }
+@media (max-width: 1080px) {
+  .main-nav > ul > li > a, .main-nav .nav-trigger { background-image: none; }
+  html.anim .main-nav.open { animation: menu-in .6s var(--ease-io); }
+  html.anim .main-nav.open > ul > li { animation: fade-up .7s var(--ease-x) both; }
+  html.anim .main-nav.open > ul > li:nth-child(1) { animation-delay: .18s; }
+  html.anim .main-nav.open > ul > li:nth-child(2) { animation-delay: .24s; }
+  html.anim .main-nav.open > ul > li:nth-child(3) { animation-delay: .30s; }
+  html.anim .main-nav.open > ul > li:nth-child(4) { animation-delay: .36s; }
+  html.anim .main-nav.open > ul > li:nth-child(5) { animation-delay: .42s; }
+  html.anim .main-nav.open > ul > li:nth-child(6) { animation-delay: .48s; }
+}
+@keyframes menu-in { from { clip-path: inset(0 0 100% 0); } to { clip-path: inset(0); } }
+
+/* Botões: brilho que atravessa no hover */
+.btn { position: relative; overflow: hidden; isolation: isolate; }
+.btn::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(105deg, transparent 30%, rgba(255, 255, 255, .3) 50%, transparent 70%); transform: translateX(-130%); }
+.btn:hover::after { transform: translateX(130%); transition: transform .9s var(--ease-x); }
+
+/* Cartões e imagens respondem ao mouse com calma */
+.card-light .img-slot, .card-dark .img-slot, .area-card { overflow: hidden; }
+.img-slot img { transition: scale 1s var(--ease-x); }
+.card-light:hover .img-slot img, .card-dark:hover .img-slot img { scale: 1.06; }
+.area-card h3 { transition: transform .5s var(--ease-x); }
+.area-card:hover h3 { transform: translateX(6px); }
+.stat-num { font-variant-numeric: tabular-nums; }
+
+/* Perguntas frequentes: abre e fecha com altura animada (navegadores com suporte) */
+@supports (interpolate-size: allow-keywords) {
+  .accordion { interpolate-size: allow-keywords; }
+  .acc-item::details-content { height: 0; overflow: clip; transition: height .55s var(--ease-x), content-visibility .55s allow-discrete; }
+  .acc-item[open]::details-content { height: auto; }
+}
+@media (prefers-reduced-motion: reduce) { .loader { display: none !important; } html.has-loader body { overflow: auto; } }
+
+/* Ajustes da animação de títulos */
+html.anim .split { display: block; }
+html.anim .h-display .sw, html.anim .h-page .sw { text-shadow: none; }
+html.anim .h-display .sw.done, html.anim .h-page .sw.done { text-shadow: 0 0 76.6px var(--blue-glow); transition: text-shadow 1s ease; }
