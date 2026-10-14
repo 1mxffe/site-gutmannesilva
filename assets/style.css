@@ -652,3 +652,7 @@ html.anim .rvi.in img.px-img { scale: 1.1; }
 html.anim .split { display: block; }
 html.anim .h-display .sw, html.anim .h-page .sw { text-shadow: none; }
 html.anim .h-display .sw.done, html.anim .h-page .sw.done { text-shadow: 0 0 76.6px var(--blue-glow); transition: text-shadow 1s ease; }
+
+/* Print de avaliação: mostra a imagem inteira, sem cortar */
+.img-slot.has-img.img-contain { background: #fff; }
+.img-slot.has-img.img-contain img { object-fit: contain; padding: 14px; }
