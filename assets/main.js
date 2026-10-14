@@ -10,50 +10,10 @@
   var root = document.documentElement;
   var animOn = root.classList.contains('anim') && 'IntersectionObserver' in window;
 
-  // ---- Entrada: cortina de carregamento e transição entre páginas ----
-  var loader = document.querySelector('.loader');
+  // ---- Entrada: o hero anima assim que a página abre ----
   var heroQueue = [];
-  var ready = false;
-  function setReady() {
-    if (ready) return; ready = true;
-    root.classList.add('ready');
-    heroQueue.forEach(function (fn) { fn(); });
-    heroQueue = [];
-  }
-  function runLoader() {
-    if (!loader || !root.classList.contains('has-loader')) { setReady(); return; }
-    var first = root.classList.contains('loader-first');
-    var started = Date.now();
-    var leave = function () {
-      loader.classList.add('leaving');
-      setTimeout(setReady, first ? 520 : 420);
-      setTimeout(function () { root.classList.remove('has-loader', 'loader-first', 'loader-nav'); loader.classList.remove('leaving'); }, 1300);
-    };
-    var go = function () { setTimeout(leave, Math.max(0, (first ? 1100 : 120) - (Date.now() - started))); };
-    if (document.readyState === 'complete') go(); else window.addEventListener('load', go);
-    setTimeout(leave, 3500); // segurança: nunca prender a página
-  }
-  runLoader();
-
-  window.addEventListener('pageshow', function (e) {
-    if (e.persisted) { root.classList.remove('has-loader', 'loader-first', 'loader-nav', 'covering', 'covering-in'); if (loader) loader.classList.remove('leaving'); }
-  });
-  if (animOn && loader) {
-    document.addEventListener('click', function (e) {
-      if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
-      var a = e.target.closest && e.target.closest('a[href]');
-      if (!a || a.target || a.hasAttribute('download')) return;
-      var u;
-      try { u = new URL(a.href, location.href); } catch (err) { return; }
-      if (u.origin !== location.origin || u.pathname === location.pathname || !/(\.html|\/)$/.test(u.pathname)) return;
-      e.preventDefault();
-      try { sessionStorage.setItem('gs-nav', '1'); } catch (err) {}
-      root.classList.add('has-loader', 'loader-nav', 'covering');
-      void loader.offsetWidth;
-      root.classList.add('covering-in');
-      setTimeout(function () { location.href = u.href; }, 650);
-    });
-  }
+  var ready = true;
+  root.classList.add('ready');
 
   if (animOn) {
     var EASE_MS = 1700;
