@@ -570,8 +570,8 @@ html.anim .hero .wrap > *, html.anim .page-hero-copy > * { animation: none; }
 html.anim .sw { display: inline-block; overflow: hidden; vertical-align: top; padding: 0 .08em .16em 0; margin: 0 -.08em -.16em 0; }
 html.anim .sw.done { overflow: visible; }
 html.anim .sw > span { display: inline-block; }
-html.anim .split .sw > span { transform: translate3d(0, 115%, 0); transition: transform 1.25s var(--ease-x); transition-delay: calc(var(--d, 0ms) + var(--i, 0) * 70ms); }
-html.anim .split.in .sw > span { transform: none; }
+html.anim .tsplit .sw > span { transform: translate3d(0, 115%, 0); transition: transform 1.25s var(--ease-x); transition-delay: calc(var(--d, 0ms) + var(--i, 0) * 70ms); }
+html.anim .tsplit.in .sw > span { transform: none; }
 
 /* Imagens: a cortina abre e o zoom assenta */
 html.anim .rvi { clip-path: inset(12% 12% 12% 12% round 16px); transition: clip-path 1.6s var(--ease-x); transition-delay: var(--d, 0ms); }
@@ -626,7 +626,7 @@ html.anim .rvi.in img.px-img { scale: 1.1; }
 }
 
 /* Ajustes da animação de títulos */
-html.anim .split { display: block; }
+html.anim .tsplit { display: block; }
 html.anim .h-display .sw, html.anim .h-page .sw { text-shadow: none; }
 html.anim .h-display .sw.done, html.anim .h-page .sw.done { text-shadow: 0 0 76.6px var(--blue-glow); transition: text-shadow 1s ease; }
 

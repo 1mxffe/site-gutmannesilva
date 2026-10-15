@@ -22,7 +22,7 @@
         el.style.setProperty('--d', delay + 'ms');
         el.classList.add('in');
         setTimeout(function () {
-          el.classList.remove('rv', 'rvi', 'split', 'in');
+          el.classList.remove('rv', 'rvi', 'tsplit', 'in');
           el.style.removeProperty('--d');
           el.querySelectorAll('.sw').forEach(function (s) { s.classList.add('done'); });
         }, EASE_MS + delay + 400);
@@ -63,7 +63,7 @@
     document.querySelectorAll('.h-display, .h-page, .h-lead, .h-section, .cta-copy h2').forEach(function (h) {
       var isHero = h.matches(heroEls);
       var split = splitTitle(h);
-      h.classList.add(split ? 'split' : 'rv');
+      h.classList.add(split ? 'tsplit' : 'rv');
       if (isHero) reveal(h, 0, true); else { h.setAttribute('data-d', 0); io.observe(h); }
     });
 
